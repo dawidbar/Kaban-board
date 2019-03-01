@@ -1,0 +1,114 @@
+body {
+  background-image: url(/images/background.jpg);
+  background-position: 50% 30%;
+  background-repeat: no-repeat;
+}
+
+body .board {
+  text-align: center;
+}
+
+body .board h1 {
+  text-align: center;
+  color: #fff;
+  font-size: 48px;
+  font-family: "Pacifico";
+  font-weight: 400;
+}
+
+body .board .create-column {
+  font-family: "Quicksand";
+  font-weight: 400;
+  font-size: 24px;
+  border-radius: 12px;
+  background-color: #06aed8;
+  color: #fff;
+  padding: 10px;
+  border: 2px solid #fff;
+  background-image: linear-gradient(135deg, #19b7c3, #c799a4, 55%, transparent 50%);
+  min-width: 160px;
+  min-height: 50px;
+  cursor: pointer;
+  background-color: inherit;
+  background-position: 100% 0;
+  background-size: 300%;
+  transition: 0.4s;
+}
+
+body .board .create-column:hover {
+  background-position: 0 100%;
+  color: #fff;
+  border: 2px solid #06aed8;
+}
+
+body .board .column-container {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+}
+
+body .board .column-container .column {
+  padding: 20px;
+}
+
+body .board .column-container .column .column-title {
+  font-family: "Quicksand";
+  font-weight: 400;
+  color: #fff;
+  font-size: 36px;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+body .board .column-container .column .btn-delete-column, body .board .column-container .column .btn-delete, body .board .column-container .column .add-card {
+  font-family: "Quicksand";
+  font-weight: 400;
+  font-size: 15px;
+  border-radius: 50%;
+  background-color: #06aed8;
+  color: #fff;
+  border: 2px solid #fff;
+  background-image: linear-gradient(135deg, #19b7c3, 55%, transparent 50%);
+  cursor: pointer;
+  background-color: inherit;
+  background-position: 100% 0;
+  background-size: 300%;
+  transition: 0.4s;
+  margin: 5px;
+  position: absolute;
+  top: 261px;
+  margin-left: 10px;
+}
+
+body .board .column-container .column .btn-delete-column:hover, body .board .column-container .column .btn-delete:hover, body .board .column-container .column .add-card:hover {
+  background-position: 0 100%;
+  color: #fff;
+  border: 2px solid #19b7c3;
+}
+
+body .board .column-container .column .btn-delete {
+  position: initial;
+}
+
+body .board .column-container .column .add-card {
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 12px;
+  position: initial;
+}
+
+body .board .column-container .column .column-card-list {
+  color: #fff;
+}
+
+body .board .column-container .column .column-card-list .card .card-description {
+  color: #fff;
+  font-family: "Quicksand";
+  font-weight: 400;
+  -webkit-text-decoration-color: #fff;
+          text-decoration-color: #fff;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+/*# sourceMappingURL=style.css.map */
