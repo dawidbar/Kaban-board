@@ -15,8 +15,6 @@
             <h1 class="first">Kanban board</h1>	<h1 class="second">It help you organize and prioritize your work</h1>
         </div>
     <div id="board" class="board">
-            
-        <!-- <h1 id="messenger">Kanban board</h1> -->
         <button class="create-column">Add a column</button>
         <div class="column-container"></div>
     </div>
@@ -31,12 +29,41 @@
     <script id="card-template" type="x-tmpl-mustache">
         <div class="card">
           <p class="card-description">{{ description }}</p>
-          <button class="btn-delete">X</button>
+          <button class="btn-delete-card">X</button>
         </div
       </script>
+
+      <div class="container">
+        <div class="inner-container">
+            <div class="card-help inactive-1"></div>
+            <div class="card-help inactive-2"></div>
+            <div class="card-help">
+                <div class="content active">
+                    <h1 class="help">Step 1</h1>
+                    <p class="p-help">Add a new column or fill out the existing one <i class="em em-pencil2"></i></p>
+                    <a class="button" href="#">Next step &rarr;</a>
+                </div>
+                <div class="content">
+                    <h1 class="help">Step 2</h1>
+                    <p class="p-help">Add new task to your column <i class="em em-ballot_box_with_check"></i></p>
+                    <a class="button" href="#">Next step &rarr;</a>
+                </div>
+                <div class="content">
+                    <h1 class="help">Step 3</h1>
+                    <p class="p-help">Enjoy your kanban board <i class="em em-smiley"></i> and hover the title on the top!</p>
+                    <a class="button" href="#">Next step &rarr;</a>
+                </div>
+                <div class="progress-container">
+                    <div class="step"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.6.0/Sortable.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 
