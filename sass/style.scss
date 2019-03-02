@@ -1,13 +1,23 @@
+@import url('https://afeld.github.io/emoji-css/emoji.css');
+$white: #fff;
+$num: 1;
+$aqua: #00CED1;
+$blueberry: #2575fc;
+$grape: #6a11cb;
+$darkcloud: #8f959a;
+
 * {
     box-sizing: border-box;
 }
-$white: #fff;
+
 body {
     background-image: url(../images/background.jpg);
     background-position: 50% 30%;
     background-repeat: no-repeat;
+
     .board {
         text-align: center;
+
         h1 {
             text-align: center;
             color: #fff;
@@ -15,37 +25,43 @@ body {
             font-family: "Pacifico";
             font-weight: 400;
         }
+
         .create-column {
-        font-family: "Quicksand";
-        font-weight: 400;
-        font-size: 24px;
-        border-radius: 12px;
-        background-color: rgb(6, 174, 216);
-        color: #fff;
-        padding: 10px;
-        border: 2px solid $white;
-        background-image: linear-gradient(135deg, #19b7c3, #c799a4, 55%, transparent 50%);
-        min-width: 160px;
-        min-height: 50px;
-        cursor: pointer;
-        background-color: inherit;
-	    background-position: 100% 0;
-	    background-size: 300%;
-        transition: 0.4s;
-        &:hover{
-            background-position: 0 100%;
-            color: $white;
-            border: 2px solid rgb(6, 174, 216);
+            font-family: "Quicksand";
+            font-weight: 400;
+            font-size: 24px;
+            border-radius: 12px;
+            background-color: rgb(6, 174, 216);
+            color: #fff;
+            padding: 10px;
+            border: 2px solid $white;
+            background-image: linear-gradient(135deg, #19b7c3, #c799a4, 55%, transparent 50%);
+            min-width: 160px;
+            min-height: 50px;
+            cursor: pointer;
+            background-color: inherit;
+            background-position: 100% 0;
+            background-size: 300%;
+            transition: 0.4s;
+
+            &:hover {
+                background-position: 0 100%;
+                color: $white;
+                border: 2px solid rgb(6, 174, 216);
             }
         }
+
         .column-container {
             display: flex;
             justify-content: center;
+
             .column {
                 padding: 20px;
                 background-color: rgba(224, 223, 223, 0.3);
                 border-radius: 10%;
                 margin: 25px;
+                min-width: 210px;
+
                 .column-title {
                     font-family: "Quicksand";
                     font-weight: 400;
@@ -54,6 +70,7 @@ body {
                     display: inline-flex;
                     margin-bottom: 0;
                 }
+
                 .btn-delete-card {
                     font-family: "Quicksand";
                     font-weight: 400;
@@ -68,18 +85,22 @@ body {
                     background-size: 300%;
                     transition: 0.4s;
                     margin: 5px;
-                    &:hover{
+
+                    &:hover {
                         background-position: 0 100%;
                         color: $white;
                         border: 2px solid #19b7c3;
                     }
+
                     margin-left: 10px;
                 }
+
                 .btn-delete {
                     @extend .btn-delete-card;
                     border: 2px solid $white;
                     color: $white;
                 }
+
                 .add-card {
                     @extend .btn-delete-card;
                     font-size: 16px;
@@ -88,11 +109,14 @@ body {
                     border: 2px solid $white;
                     color: $white;
                 }
+
                 .column-card-list {
                     color: #027e9a;
                     background-color: $white;
                     border-radius: 12px;
                     margin: 15px;
+                    min-height: 52px;
+
                     .card {
                         .card-description {
                             color: #027e9a;
@@ -108,76 +132,71 @@ body {
 }
 
 
-.titleWrapper{
+.titleWrapper {
     margin-bottom: 20px;
-	text-align:center;
-	height:90px;
-	overflow:hidden;
-	width: 100%;
-	text-align:center;
+    text-align: center;
+    height: 90px;
+    overflow: hidden;
+    width: 100%;
+    text-align: center;
 }
-h1{
-	margin:0;
-	padding:0;
-	line-height:80px;
-	position: relative;
-	word-space: 4em;
+
+h1 {
+    margin: 0;
+    padding: 0;
+    line-height: 80px;
+    position: relative;
+    word-space: 4em;
     letter-spacing: 0.05em;
     text-align: center;
-            color: #fff;
-            font-size: 48px;
-            font-family: "Pacifico";
-            font-weight: 400;
-}
-h1 span{
-	position: relative;
-	display: inline-block;
-	transform: translateY(100%);
-	transition: all 0.25s cubic-bezier(0.65, 0, 0.21, 1.47) 0s;
+    color: #fff;
+    font-size: 48px;
+    font-family: "Pacifico";
+    font-weight: 400;
 }
 
-.titleWrapper.ready h1 span{
-	transform: translateY(0%);
+h1 span {
+    position: relative;
+    display: inline-block;
+    transform: translateY(100%);
+    transition: all 0.5s cubic-bezier(0.65, 0, 0.21, 1.47) 0.02s;
 }
 
-h1.first span{
-	position:relative;
-	z-index:5;
-}
-h1.second span{
-	position:relative;
-	z-index:1;
+.titleWrapper.ready h1 span {
+    transform: translateY(0%);
 }
 
-$num: 1;
+h1.first span {
+    position: relative;
+    z-index: 5;
+}
+
+h1.second span {
+    position: relative;
+    z-index: 1;
+}
+
+
 
 @while $num < 20 {
     h1.first span:nth-of-type(#{$num}) {
-			transition-delay: 0.02s * $num;
-    }
-		h1.second span:nth-of-type(#{$num}) {
-			transition-delay: 0.03s * $num + 0.05;
+        transition-delay: 0.01s * $num;
     }
 
-    $num: $num + 1;
+    h1.second span:nth-of-type(#{$num}) {
+        transition-delay: 0.02s * $num + 0.05;
+    }
+
+    $num: $num+1;
 }
 
-.titleWrapper.ready:hover h1.first span{
-	transform: translateY(-100%);
-}
-.titleWrapper.ready:hover h1.second span{
-	transform: translateY(-100%);
+.titleWrapper.ready:hover h1.first span {
+    transform: translateY(-100%);
 }
 
-
-@import url('https://fonts.googleapis.com/css?family=Titillium+Web:300,700,900');
-@import url('https://fonts.googleapis.com/css?family=Palanquin:300');
-@import url('https://afeld.github.io/emoji-css/emoji.css');
-
-$aqua: #00CED1;
-$blueberry: #2575fc;
-$grape: #6a11cb;
-$darkcloud: #8f959a;
+.titleWrapper.ready:hover h1.second span {
+    transform: translateY(-100%);
+}
 
 .container {
     margin: 4em auto;
@@ -216,7 +235,8 @@ $darkcloud: #8f959a;
     height: 300px;
     box-sizing: border-box;
     transition: .3s ease;
-    box-shadow: 0 3px 10px -2px rgba(0,0,0,0.35);
+    box-shadow: 0 3px 10px -2px rgba(0, 0, 0, 0.35);
+
     &:first-child,
     &:nth-child(2) {
         background: darken($aqua, 2%);
@@ -225,13 +245,16 @@ $darkcloud: #8f959a;
         padding: 0;
         box-shadow: none;
     }
+
     &:first-child {
         margin: 0 20px;
         background: darken($aqua, 6%);
     }
+
     &:nth-child(2) {
         margin: 0 10px;
     }
+
     .progress-container {
         background: rgba($blueberry, 0.2);
         height: 6px;
@@ -240,6 +263,7 @@ $darkcloud: #8f959a;
         left: 0;
         width: 100%;
         border-radius: 0 0 5px 5px;
+
         .step {
             background-color: $blueberry;
             height: 6px;
@@ -247,6 +271,7 @@ $darkcloud: #8f959a;
             border-radius: 0 0 0 5px;
         }
     }
+
     .button {
         font-family: "Quicksand";
         font-weight: 400;
