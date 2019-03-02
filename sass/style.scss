@@ -1,3 +1,6 @@
+* {
+    box-sizing: border-box;
+}
 $white: #fff;
 body {
     background-image: url(../images/background.jpg);
@@ -40,21 +43,24 @@ body {
             justify-content: center;
             .column {
                 padding: 20px;
+                background-color: rgba(224, 223, 223, 0.3);
+                border-radius: 10%;
+                margin: 25px;
                 .column-title {
                     font-family: "Quicksand";
                     font-weight: 400;
                     color: $white;
                     font-size: 36px;
                     display: inline-flex;
+                    margin-bottom: 0;
                 }
-                .btn-delete-column {
+                .btn-delete {
                     font-family: "Quicksand";
                     font-weight: 400;
-                    font-size: 15px;
+                    font-size: 12px;
                     border-radius: 50%;
-                    background-color: rgb(6, 174, 216);
-                    color: #fff;
-                    border: 2px solid $white;
+                    color: #027e9a;
+                    border: 2px solid #027e9a;
                     background-image: linear-gradient(135deg, #19b7c3, 55%, transparent 50%);
                     cursor: pointer;
                     background-color: inherit;
@@ -67,29 +73,29 @@ body {
                         color: $white;
                         border: 2px solid #19b7c3;
                     }
-                    position: absolute;
-                    top: 261px;
                     margin-left: 10px;
                 }
                 .btn-delete {
-                    @extend .btn-delete-column;
-                    position: initial;
+                    @extend .btn-delete;
+                    border: 2px solid $white;
+                    color: $white;
                 }
                 .add-card {
-                    @extend .btn-delete-column;
+                    @extend .btn-delete;
                     font-size: 16px;
                     padding: 10px;
                     border-radius: 12px;
-                    position: initial;
                 }
                 .column-card-list {
-                    color: $white;
+                    color: #027e9a;
+                    background-color: $white;
+                    border-radius: 12px;
+                    margin: 15px;
                     .card {
                         .card-description {
-                            color: $white;
+                            color: #027e9a;
                             font-family: "Quicksand";
                             font-weight: 400;
-                            text-decoration-color: $white;
                             display: inline-flex;
                         }
                     }
@@ -97,4 +103,69 @@ body {
             }
         }
     }
+}
+
+
+.titleWrapper{
+    margin-bottom: 20px;
+	text-align:center;
+	height:90px;
+	overflow:hidden;
+	width: 100%;
+	text-align:center;
+}
+h1{
+	margin:0;
+	padding:0;
+	line-height:80px;
+	position: relative;
+	word-space: 4em;
+    letter-spacing: 0.05em;
+    text-align: center;
+            color: #fff;
+            font-size: 48px;
+            font-family: "Pacifico";
+            font-weight: 400;
+}
+h1 span{
+	position: relative;
+	display: inline-block;
+	transform: translateY(100%);
+	transition: all 0.25s cubic-bezier(0.65, 0, 0.21, 1.47) 0s;
+}
+
+.titleWrapper.ready h1 span{
+	transform: translateY(0%);
+}
+
+h1.first span{
+	position:relative;
+	z-index:5;
+}
+h1.second span{
+	position:relative;
+	z-index:1;
+}
+
+$num: 1;
+
+@while $num < 20 {
+    h1.first span:nth-of-type(#{$num}) {
+			transition-delay: 0.02s * $num;
+    }
+		h1.second span:nth-of-type(#{$num}) {
+			transition-delay: 0.03s * $num + 0.05;
+    }
+
+    $num: $num + 1;
+}
+
+
+
+
+.titleWrapper.ready:hover h1.first span{
+	transform: translateY(-100%);
+}
+.titleWrapper.ready:hover h1.second span{
+	transform: translateY(-100%);
 }

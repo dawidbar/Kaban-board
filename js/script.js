@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
           if (event.target.classList.contains('btn-delete')) {
             self.removeColumn();
           }
-      
+
           if (event.target.classList.contains('add-card')) {
             self.addCard(new Card(prompt("Enter the name of the card")));
           }
@@ -114,4 +114,24 @@ document.addEventListener('DOMContentLoaded', function() {
     // ADDING CARDS TO COLUMNS
     todoColumn.addCard(card1);
     doingColumn.addCard(card2);
+
+    
+});
+
+jQuery(document).ready(function(){
+	jQuery(".titleWrapper").addClass("ready");
+	
+jQuery(".titleWrapper h1").each(function(){
+	var fullString;
+	var characters = jQuery(this).text().split("");
+	
+	var $this = jQuery(this);
+	$this.empty();
+	$.each(characters, function (i, el) {
+		if(el == " "){el = "&nbsp;"};
+    $this.append("<span>" + el + "</span");
+	});
+		
+});
+	
 });
