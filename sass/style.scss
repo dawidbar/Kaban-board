@@ -54,7 +54,8 @@ body {
         .column-container {
             display: flex;
             justify-content: center;
-
+            flex-wrap: wrap;
+            
             .column {
                 padding: 20px;
                 background-color: rgba(224, 223, 223, 0.3);
@@ -130,7 +131,6 @@ body {
         }
     }
 }
-
 
 .titleWrapper {
     margin-bottom: 20px;

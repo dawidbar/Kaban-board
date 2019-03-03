@@ -51,6 +51,8 @@ body .board .column-container {
   display: flex;
   -ms-flex-pack: center;
       justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 body .board .column-container .column {

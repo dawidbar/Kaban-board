@@ -123,25 +123,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
 $(function () {
     console.log("ready!");
+    jQuery(".titleWrapper").addClass("ready");
+    jQuery(".titleWrapper h1").each(function () {
+        var fullString;
+        var characters = jQuery(this).text().split("");
 
-    jQuery(document).ready(function () {
-        jQuery(".titleWrapper").addClass("ready");
-
-        jQuery(".titleWrapper h1").each(function () {
-            var fullString;
-            var characters = jQuery(this).text().split("");
-
-            var $this = jQuery(this);
-            $this.empty();
-            $.each(characters, function (i, el) {
-                if (el == " ") {
-                    el = "&nbsp;"
-                };
-                $this.append("<span>" + el + "</span");
-            });
+        var $this = jQuery(this);
+        $this.empty();
+        $.each(characters, function (i, el) {
+            if (el == " ") {
+                el = "&nbsp;"
+            };
+            $this.append("<span>" + el + "</span");
         });
     });
-
     var content = $('.content');
     var currentItem = content.filter('.active');
     var steps = $('.card-help').filter('.steps');
