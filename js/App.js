@@ -1,3 +1,4 @@
+var prefix = "https://cors-anywhere.herokuapp.com/";
 // OGÓLNA FUNKCJA
 
 function generateTemplate(name, data, basicElement) {
@@ -94,7 +95,7 @@ var myHeaders = {
     'X-Auth-Token': 'ef7ba5d769338c790b7b4a622b6fb581'
 };
 
-fetch(baseUrl + '/board', {
+fetch(prefix + baseUrl + '/board', {
         headers: myHeaders
     })
     .then(function (resp) {
