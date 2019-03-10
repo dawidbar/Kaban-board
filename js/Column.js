@@ -1,7 +1,7 @@
-function Column(name) {
+function Column(id, name) {
     var self = this;
 
-    this.id = randomString();
+    this.id = id;
     this.name = name;
     this.element = generateTemplate('column-template', {
         name: this.name,
@@ -45,7 +45,7 @@ Column.prototype = {
     },
     removeColumn: function () {
         var self = this;
-        fetch(baseUrl + '/column/' + self.id, {
+        fetch(prefix + baseUrl + '/column/' + self.id, {
                 method: 'DELETE',
                 headers: myHeaders
             })
@@ -57,8 +57,3 @@ Column.prototype = {
             });
     }
 };
-
-function Column(id, name) {
-    this.id = id;
-    this.name = name || 'No name given';
-}
