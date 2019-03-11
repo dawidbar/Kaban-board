@@ -13,7 +13,6 @@ function generateTemplate(name, data, basicElement) {
 
 // Aminacje
 $(function () {
-    console.log("ready!");
     jQuery(".titleWrapper").addClass("ready");
     jQuery(".titleWrapper h1").each(function () {
         var fullString;
